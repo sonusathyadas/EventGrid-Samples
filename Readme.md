@@ -2,8 +2,10 @@
 
 ### Communication strategies in application programming
 1. **REST Services**
-    This is one of the commonly used communication method in applications. A service can be exposed as an HTTP endpoint and one or more clients can send requests to that `HTTP endpoint`. The REST servcie accepts the reqeust and send the response to the client. 
+    This is one of the commonly used communication method in applications. A service can be exposed as an HTTP endpoint and one or more clients can send requests to that `HTTP endpoint`. The REST servcie accepts the reqeust and send the response to the client.
+
     ![REST communication](https://www.studytonight.com/rest-web-service/images/REST-message.png)
+
     The following are the features of REST based communications:
     + `Sender` and `receiver` must be online. If receiver is offline it send an error response to the client. 
     + One to one communication.
@@ -12,10 +14,14 @@
     + Sender is well aware, how the request is going to be processed and what kind of response is can be expected. 
     + Communication is real-time.
     + Optionally, we can use an API Gateway to do advanced request-response processing such as SSL offloading, authentication, routing and caching etc.
+
     ![REST with API Gateway](https://docs.microsoft.com/en-us/azure/architecture/microservices/images/gateway.png)
+
 2. **Message based communication**
     In a message based communication we use an intermediary component called `Message Broker`(eg:RabbitMQ, Azure Service Bus). They commonly follows the `AMQP (Advanced Message Queuing Protocol)` to provide interoperability between all messaging middleware. When using messaging, processes communicate by exchanging messages asynchronously. A client makes a command or a request to a service by sending it a message. If the service needs to reply, it sends a different message back to the client. Since it's a message-based communication, the client assumes that the reply won't be received immediately, and that there might be no response at all. 
+
     ![Messaging pattern](https://www.cloudamqp.com/img/blog/rabbitmq-beginners-updated.png)
+
     Following are the features of message based communication:
     + Asynchromous communication.
     + Receiver can be offline. When it comes online, it can consume messages from the queue.    
@@ -24,6 +30,7 @@
     + Messages are simple text contents.
     + Sender can have an expectation, how the messages will be processed by the consumer.
     + Messages can be sent to all consumers using `fanout` fashion or to single receiver using `direct` or  only to a group of receivers by using `topic`.
+
     ![Message exchange patterns](https://i2.wp.com/blog.knoldus.com/wp-content/uploads/2018/12/exchanges-topic-fanout-direct.png)
 
 3. **Event-driven architecture**
@@ -32,6 +39,7 @@
     An event-driven architecture is best suited for such scenarios. The event-driven    architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. An `event` is an object that represents what had happened in the event source. An `event source` is a component that generates stream of events. An `event consumers` is a service or application that consumes the events and react to it. An `event source` application uses `topics` to publish events. A `topic` is an end point for publishing an event. `Event consumers` uses `event subscriptions` to filter and consume events. An `event subscription` is an endpoint to consume routed events.
 
     ![Event ingestion system](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/images/event-driven.svg)
+    
     Events are delivered in near real time, so consumers can respond immediately to events as they occur. Producers are decoupled from consumers — a producer doesn't know which consumers are listening. Consumers are also decoupled from each other, and every consumer sees all of the events. 
     
     An event driven architecture can use a `pub/sub model` or an `event stream model`.
