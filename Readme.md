@@ -50,3 +50,54 @@
     + **Simple event processing**: An event immediately triggers an action in the consumer.For example, you could use Azure Functions with a Service Bus trigger.
     + **Complex event processing**: A consumer processes a series of events, looking for patterns in the event data, using a technology such as Azure Stream Analytics or Apache Storm.
     + **Event stream processing**: Use a data streaming platform, such as Azure IoT Hub or Apache Kafka, as a pipeline to ingest events and feed them to stream processors. The stream processors act to process or transform the stream. There may be multiple stream processors for different subsystems of the application. This approach is a good fit for IoT workloads.
+
+    Event-driven architecture has the following features:
+    + Real-time processing of request.
+    + Asynchronous processing.
+    + Receiver can be offline.
+    + One-to-many communication.
+    + Sender is not aware how the subscriber (receiver) is going to handle the event.
+
+### Azure Event Grid
+Azure `Event Grid` is a fully-managed intelligent event routing service that allows `event publishers` to send events to an event ingestion system and `event consumers` to subscribe for that. Event Grid routes the events to the appropriate subscribers. Publisher and subscriber can be Azure or non-Azure service.
+
+`Event Grid` allows you to build applications with event based architectures. Some Azure services such as Resource Groups, Storage account, Service Bus, Event Hub, Media services are already integrated with Event Grid. Event Grid can also support custom events from your applications using `Custom Topics`. An event handler can be any Azure or non-azure service. You can use Azure Function, Logic Apps, Event Hubs, Storage Queues as an `event handler`. You can also use your custom application as an `event handler` using `Web Hooks`. 
+
+![Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/media/overview/functional-model.png)
+
+Some of the key features of Azure Event Grid are:
+
++ *Simplicity* - Point and click to aim events from your Azure resource to any event handler or endpoint.
++ *Advanced filtering* - Filter on event type or event publish path to make sure event handlers only receive relevant events.
++ *Fan-out* - Subscribe several endpoints to the same event to send copies of the event to as many places as needed.
++ *Reliability* - 24-hour retry with exponential backoff to make sure events are delivered.
++ *Pay-per-event* - Pay only for the amount you use Event Grid.
++ *High throughput* - Build high-volume workloads on Event Grid with support for millions of events per second.
++ *Built-in Events* - Get up and running quickly with resource-defined built-in events.
++ *Custom Events* - Use Event Grid route, filter, and reliably deliver custom events in your app.
+
+#### Subscribe events for Storage account blob service using Event Grid
+1. Open the Azure Portal by navigating to [http://portal.azure.com](https://portal.azure.com).
+2. Select the `Create a resource` button found on the upper left-hand corner of the Azure portal, then select `Compute` > `Function App`.
+
+    ![Azure Functions](https://docs.microsoft.com/en-us/azure/includes/media/functions-create-function-app-portal/function-app-create-flow.png)
+3. Use the function app settings as specified in the table below the image.
+    ![Function App](https://docs.microsoft.com/en-us/azure/includes/media/functions-create-function-app-portal/function-app-create-flow2.png)
+4. Select Create to provision and deploy the function app.
+5. Select the Notification icon in the upper-right corner of the portal and watch for the Deployment succeeded message.
+    
+    ![Function App](https://docs.microsoft.com/en-us/azure/includes/media/functions-create-function-app-portal/function-app-create-notification.png)
+
+6. Now, You need to create an Http Triggered function in the newly created Function app. Open and expand your new function app, then select the **+** button next to `Functions`, choose `In-portal`, and select `Continue`.
+
+    ![Function](https://docs.microsoft.com/en-us/azure/azure-functions/media/functions-create-first-azure-function/function-app-quickstart-choose-portal.png)
+
+7. Click on `More templates` and 
+
+    
+    A function is created using a language-specific template for an HTTP triggered function. Now, you can run the new function by sending an HTTP request.
+8. No, you need to get the Url of the Http Trigger function, To do that, click `</> Get function URL` at the top right, select default (Function key), and then click Copy.
+
+    ![Function Url](https://docs.microsoft.com/en-us/azure/azure-functions/media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
+
+9. 
