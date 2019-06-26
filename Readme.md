@@ -39,14 +39,14 @@
     An event-driven architecture is best suited for such scenarios. The event-driven    architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. An `event` is an object that represents what had happened in the event source. An `event source` is a component that generates stream of events. An `event consumers` is a service or application that consumes the events and react to it. An `event source` application uses `topics` to publish events. A `topic` is an end point for publishing an event. `Event consumers` uses `event subscriptions` to filter and consume events. An `event subscription` is an endpoint to consume routed events.
 
     ![Event ingestion system](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/images/event-driven.svg)
-    
+
     Events are delivered in near real time, so consumers can respond immediately to events as they occur. Producers are decoupled from consumers — a producer doesn't know which consumers are listening. Consumers are also decoupled from each other, and every consumer sees all of the events. 
     
     An event driven architecture can use a `pub/sub model` or an `event stream model`.
-    **Pub/sub**: The messaging infrastructure keeps track of subscriptions. When an event is published, it sends the event to each subscriber. After an event is received, it cannot be replayed, and new subscribers do not see the event.
-    **Event streaming**: Events are written to a log. Events are strictly ordered and durable. Clients don't subscribe to the stream, instead a client can read from any part of the stream. The client is responsible for advancing its position in the stream. That means a client can join at any time, and can replay events.
+    + **Pub/sub**: The messaging infrastructure keeps track of subscriptions. When an event is published, it sends the event to each subscriber. After an event is received, it cannot be replayed, and new subscribers do not see the event.
+    + **Event streaming**: Events are written to a log. Events are strictly ordered and durable. Clients don't subscribe to the stream, instead a client can read from any part of the stream. The client is responsible for advancing its position in the stream. That means a client can join at any time, and can replay events.
     
     On the consumer side, there are some common variations:
-    **Simple event processing**: An event immediately triggers an action in the consumer.For example, you could use Azure Functions with a Service Bus trigger.
-    **Complex event processing**: A consumer processes a series of events, looking for patterns in the event data, using a technology such as Azure Stream Analytics or Apache Storm.
-    **Event stream processing**: Use a data streaming platform, such as Azure IoT Hub or Apache Kafka, as a pipeline to ingest events and feed them to stream processors. The stream processors act to process or transform the stream. There may be multiple stream processors for different subsystems of the application. This approach is a good fit for IoT workloads.
+    + **Simple event processing**: An event immediately triggers an action in the consumer.For example, you could use Azure Functions with a Service Bus trigger.
+    + **Complex event processing**: A consumer processes a series of events, looking for patterns in the event data, using a technology such as Azure Stream Analytics or Apache Storm.
+    + **Event stream processing**: Use a data streaming platform, such as Azure IoT Hub or Apache Kafka, as a pipeline to ingest events and feed them to stream processors. The stream processors act to process or transform the stream. There may be multiple stream processors for different subsystems of the application. This approach is a good fit for IoT workloads.
