@@ -92,12 +92,19 @@ Some of the key features of Azure Event Grid are:
 
     ![Function](https://docs.microsoft.com/en-us/azure/azure-functions/media/functions-create-first-azure-function/function-app-quickstart-choose-portal.png)
 
-7. Click on `More templates` and 
+7. Select `More templates` and click on `Finish and view templates` button.
 
+    ![Event Grid Trigger Fn](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-02.png)
     
-    A function is created using a language-specific template for an HTTP triggered function. Now, you can run the new function by sending an HTTP request.
-8. No, you need to get the Url of the Http Trigger function, To do that, click `</> Get function URL` at the top right, select default (Function key), and then click Copy.
+8. In the search box, type `Event grid` and select `Azure Event Grid Trigger` from the search results.
 
-    ![Function Url](https://docs.microsoft.com/en-us/azure/azure-functions/media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
+    ![Event Grid Trigger](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-03.png)
 
-9. 
+9. This will require and extension to be installed. Click on the `Install` button to install the `EventGrid` web jobs extension.
+
+    ![Event Grid Trigger](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-04.png)
+
+10. Once the installation of extension is completed, Type the name of your function and click `Create`.
+    ![Event Grid Trigger](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-05.png)
+
+11. You function is now created. 
