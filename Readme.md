@@ -108,3 +108,29 @@ Some of the key features of Azure Event Grid are:
     ![Event Grid Trigger](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-05.png)
 
 11. You function is now created. 
+12. Open the newly created function and click on the `Add Event Grid Subscription` link.
+
+    ![Azure Functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-06.png)
+
+13. Provide the subscription name and choose the topic type as `Storage accounts`. Choose your subscription, Resource group and storage account name. Click on the `Create` button.
+
+    ![Azure functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-07.png)
+
+14. Open the storage account, select `Events` from the menu options and verify the subscription you have created.
+
+    ![Azure functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-08.png)
+
+15. Open your Azure function in a new browser window and open the `Logs` window. When you add or remove blobs, the event details will be printed on the log window.
+
+    ![Azure functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-09.png)
+
+16. Open the storage account blob service in a new windows and create a new container.
+
+    ![Azure functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-10.png)
+
+16. Upload a new file to the container you have created.
+
+    ![Azure functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-11.png)
+
+17. Switch to the Azure function's window and you can see the event details printed on the log window.
+    ![Azure functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-12.png)
