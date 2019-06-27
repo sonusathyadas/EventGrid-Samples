@@ -136,4 +136,4 @@ Some of the key features of Azure Event Grid are:
     ![Azure functions](https://raw.githubusercontent.com/sonusathyadas/EventGrid-Samples/master/resources/images/EventGridFunction-12.png)
 
 Shared by Sonu Sathyadas 
-![mailto:sonusathyadas@hotmail.com](mailto:sonusathyadas@hotmail.com)
+[mailto:sonusathyadas@hotmail.com](mailto:sonusathyadas@hotmail.com)
